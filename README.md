@@ -15,3 +15,11 @@
 5. Kembali ke folder proyek
 6. Pindahkan file bootstrap.min.css yang sudah di download dari Bootswatch Flatly ke dalam folder css di public/bootstrap-4.3.1-dist/css
 7. Sisipkan bootstrap.min.css dan bootstrap.bundle.min.js di public/index.html
+
+# Tambahkan Font Awesome
+1. Buka web font awesome 4.7
+`https://fontawesome.com/v4.7.0/get-started/`
+2. Klik download
+3. Extract file hasil download, sehingga kita mendapatkan folder font-awesome-4.7.0
+4. Pindahkan folder tersebut ke dalam folder public di proyek kita.
+5. Sisipkan font-awesome-4.7.0 ke dalam file di public/index.html
