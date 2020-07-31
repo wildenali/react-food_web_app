@@ -4,9 +4,9 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>Test</h1>
-      </div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand" href="/">KulinerAn</a>
+      </nav>
     );
   }
 }
