@@ -14,4 +14,4 @@
 4. Untuk mendapatkan css dari bootswatch , klik dropdown nama tema pada navbar (klik flatly), kemudian klik bootstrap.min.css. Selanjutnya bootstrap.min.css akan terdownload otomatis.
 5. Kembali ke folder proyek
 6. Pindahkan file bootstrap.min.css yang sudah di download dari Bootswatch Flatly ke dalam folder css di public/bootstrap-4.3.1-dist/css
-7. Hubungkan antara 
+7. Sisipkan bootstrap.min.css dan bootstrap.bundle.min.js di public/index.html
