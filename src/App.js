@@ -4,6 +4,13 @@ import mainImage from './assets/images/aneka-makanan.jpg'
 
 class App extends Component {
   render() {
+
+    const citiesDummy = [
+      { id: 74, name: 'Jakarta', country_name: 'Indonesia' },
+      { id: 11052, name: 'Bandung', country_name: 'Indonesia' },
+      { id: 170, name: 'Bali', country_name: 'Indonesia' },
+    ]
+    
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
@@ -26,6 +33,30 @@ class App extends Component {
             </div>
           </div>
         </div>
+
+        <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
+          <div className="row">
+            <div className="col-12 text-center">
+              <h3>Featured Cities</h3>
+            </div>
+          </div>
+          <div className="row">
+
+            {citiesDummy.map(city =>
+              <div className="col-4">
+                <div className="card bg-light mb-3">
+                  <div className="card-body">
+                    <h4 className="card-title">{city.name}</h4>
+                    <p>{city.country_name}</p>
+                    <a href="/#" className="card-text">See restaurant in {city.name}</a>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </div>
+
       </div>
     );
   }
