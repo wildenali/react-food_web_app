@@ -33,6 +33,14 @@ const Footer = () => (
 
       </div>
     </div>
+
+    <div className="social-networks">
+      <a href="/#" className="twitter"><i className="fa fa-twitter"></i></a>
+      <a href="/#" className="facebook"><i className="fa fa-facebook-official"></i></a>
+      <a href="/#" className="instagram"><i className="fa fa-instagram"></i></a>
+      <a href="/#" className="google"><i className="fa fa-google-plus"></i></a>
+    </div>
+
     <div className="text-center footer-copyright">
       <p>Copyright &copy; 2020 KulinerAn</p>
     </div>

@@ -36,3 +36,47 @@
   text-decoration: none;
   color: white;
 }
+
+.social-networks {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 38px;
+}
+
+.social-networks a {
+  font-size: 32px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #f9f9f9;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.social-networks a:hover {
+  font-size: 32px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #f9f9f9;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.social-networks a:hover {
+  text-decoration: none;
+}
+
+.social-networks .twitter:hover {
+  color: green;
+}
+
+.social-networks .facebook:hover {
+  color: purple;
+}
+
+.social-networks .instagram:hover {
+  color: black;
+}
+
+.social-networks .google:hover {
+  color: orangered;
+}
