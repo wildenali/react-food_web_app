@@ -23,3 +23,13 @@
 3. Extract file hasil download, sehingga kita mendapatkan folder font-awesome-4.7.0
 4. Pindahkan folder tersebut ke dalam folder public di proyek kita.
 5. Sisipkan font-awesome-4.7.0 ke dalam file di public/index.html
+
+# API Zomato
+Untuk mendapatkan data2 seperti kota, gunakan api dari zomato
+1. Buka [zomato documentation](https://developers.zomato.com/documentation)
+2. Buka end point /cities
+3. Parameter user-key di isi dengan API Key yang sudah kita generate. Jika lupa, kita dapat melihat nya pada bagian API Credentials
+4. Parameter q di isi nama kota yang ingin kita cari. Kita akan coba dengan nama Jakarta
+5. Klik try it out
+6. Catat id kota tersebut.
+7. Ulangi kembali langkah nomor 4 dan 5 dengan nama kota lain
