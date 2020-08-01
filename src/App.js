@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import CityCard from './components/CityCard'
 import NavBar from './components/NavBar'
 import ImageAndWelcome from './components/ImageAndWelcome'
+import FeaturedCities from './components/FeaturedCities'
 
 class App extends Component {
   render() {
@@ -19,18 +19,7 @@ class App extends Component {
         <ImageAndWelcome />
 
         <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
-          <div className="row">
-            <div className="col-12 text-center">
-              <h3>Featured Cities</h3>
-            </div>
-          </div>
-          <div className="row">
-
-            {citiesDummy.map(city =>
-              <CityCard key={city.id} kota={city} />
-            )}
-
-          </div>
+          <FeaturedCities kotakota={citiesDummy} />
         </div>
 
       </div>
