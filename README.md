@@ -33,3 +33,6 @@ Untuk mendapatkan data2 seperti kota, gunakan api dari zomato
 5. Klik try it out
 6. Catat id kota tersebut.
 7. Ulangi kembali langkah nomor 4 dan 5 dengan nama kota lain
+
+# 02_Fungsional_Home_Page
+Menghubungkan Fungsional di Home page

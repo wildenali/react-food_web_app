@@ -10,9 +10,14 @@ const CityList = (props) => (
     </div>
     <div className="row">
 
-      {props.kotakota.map(city =>
+      { props.kotakota == null ? (
+        <div className="col">
+          <p>Loading...</p>
+        </div>
+      ) : (
+        props.kotakota.map(city =>
         <CityCard key={city.id} kota={city} />
-      )}
+      ))}
 
     </div>
   </>

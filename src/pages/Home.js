@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ImageAndWelcome from '../components/ImageAndWelcome'
 import SearchCity from '../components/SearchCity'
 import CityList from '../components/CitiyList'
+import axios from 'axios'
 
 class Home extends Component {
   
@@ -12,6 +13,7 @@ class Home extends Component {
   constructor() {
     super()
     this.state = {
+      featuredCities: null,
       keyword: ''
     }
   }
@@ -30,7 +32,7 @@ class Home extends Component {
       <div>
         <ImageAndWelcome />
         <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
-          <CityList title={'Featured Cities'} kotakota={citiesDummy} />
+          <CityList title={'Featured Cities'} kotakota={this.state.featuredCities} />
           
           {/* Fitur Pencarian Kota Start */}
           <SearchCity
