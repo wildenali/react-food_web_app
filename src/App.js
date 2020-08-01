@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import ImageAndWelcome from './components/ImageAndWelcome'
 import CityList from './components/CitiyList'
 import SearchCity from './components/SearchCity';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
 
@@ -50,6 +51,7 @@ class App extends Component {
 
         </div>
 
+        <Footer />
       </div>
     );
   }
