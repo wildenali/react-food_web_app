@@ -1,11 +1,11 @@
 import React from 'react'
 import CityCard from './CityCard'
 
-const FeaturedCities = (props) => (
+const CityList = (props) => (
   <>
     <div className="row">
       <div className="col-12 text-center">
-        <h3>Featured Cities</h3>
+        <h3>{props.title}</h3>
       </div>
     </div>
     <div className="row">
@@ -18,4 +18,4 @@ const FeaturedCities = (props) => (
   </>
 )
 
-export default FeaturedCities
+export default CityList

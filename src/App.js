@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar'
 import ImageAndWelcome from './components/ImageAndWelcome'
-import FeaturedCities from './components/FeaturedCities'
+import CityList from './components/CitiyList'
 import SearchCity from './components/SearchCity';
 
 class App extends Component {
@@ -36,7 +36,7 @@ class App extends Component {
         <ImageAndWelcome />
 
         <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
-          <FeaturedCities kotakota={citiesDummy} />
+          <CityList title={'Featured Cities'} kotakota={citiesDummy} />
           
           {/* Fitur Pencarian Kota Start */}
           <SearchCity
@@ -44,6 +44,9 @@ class App extends Component {
             onChange={this.changeKeywordHandler}
           />
           {/* Fitur Pencarian Kota End */}
+
+          {/* Search Result */}
+          <CityList title={'Search Result'} kotakota={citiesDummy} /> 
 
         </div>
 
