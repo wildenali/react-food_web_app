@@ -53,6 +53,9 @@ class App extends Component {
                         onChange={this.changeKeywordHandler}
                       />
                     </div>
+                    <div className="col-1">
+                      <button className="btn btn-primary" type="button">Cariii...</button>
+                    </div>
                   </div>
                 </div>
               </div>
