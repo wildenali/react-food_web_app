@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar'
 import ImageAndWelcome from './components/ImageAndWelcome'
 import FeaturedCities from './components/FeaturedCities'
+import SearchCity from './components/SearchCity';
 
 class App extends Component {
 
@@ -38,29 +39,10 @@ class App extends Component {
           <FeaturedCities kotakota={citiesDummy} />
           
           {/* Fitur Pencarian Kota Start */}
-          <div className="row" style={{ marginBottom: 30 }}>
-            <div className="col">
-              <h3>Cari Kota</h3>
-              <div className="card">
-                <div className="card-body">
-                  <div className="form-row">
-                    <div className="col-11">
-                      <input
-                        className="form-control"
-                        type="text"
-                        placeholder="Cari kota"
-                        value={this.state.keyword}
-                        onChange={this.changeKeywordHandler}
-                      />
-                    </div>
-                    <div className="col-1">
-                      <button className="btn btn-primary" type="button">Cariii...</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SearchCity
+            value={this.state.keyword}
+            onChange={this.changeKeywordHandler}
+          />
           {/* Fitur Pencarian Kota End */}
 
         </div>
