@@ -1,3 +1,12 @@
+# What Inside the App
+1. React
+2. Bootstrap
+3. Bootswatch
+4. Font Awesome
+5. API Zomato
+6. Axios
+
+
 # Create React App in the current directory
 `$ npx create-react-app .`
 
@@ -7,7 +16,7 @@
 3. Masuk ke folder /css di /bootstrap-4.5.0-dist
 4. Masuk ke folder /js di /bootstrap-4.5.0-dist, Kita hanya akan menggunakan file bootstrap.bundle.min.js. Hapus file selain file tersebut
 
-# Persiapan Bootstrap
+# Persiapan Bootswatch
 1. Buka web bootswatch (https://bootswatch.com)
 2. Pada halaman bootstwatch disediakan beberapa tema, silahkan pilih salah satu dengan cara klik salah satu tema tersebut. Pada contoh akan digunakan tema Flatly.
 3. Kita akan diarahkan ke halaman tema Flatly. Di halamana tersebut sudah disediakan component - component yang dapat kita gunakan.
@@ -36,3 +45,5 @@ Untuk mendapatkan data2 seperti kota, gunakan api dari zomato
 
 # 02_Fungsional_Home_Page
 Menghubungkan Fungsional di Home page
+1. Install axios
+`$ npm i --save axios`
