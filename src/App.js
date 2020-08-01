@@ -5,6 +5,22 @@ import ImageAndWelcome from './components/ImageAndWelcome'
 import FeaturedCities from './components/FeaturedCities'
 
 class App extends Component {
+
+  // Ingat bahwa jika kita tidak memerlukan state,
+  // kita dapat menggunakan stateless component (functional component),
+  // sedangkan jika kita memerlukan state dalam component,
+  // maka kita gunakan statefull component (class component)
+  constructor() {
+    super()
+    this.state = {
+      keyword: ''
+    }
+  }
+
+  changeKeywordHandler = (event) => {
+    this.setState({ keyword: event.target.value })
+  }
+
   render() {
 
     const citiesDummy = [
@@ -20,6 +36,28 @@ class App extends Component {
 
         <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
           <FeaturedCities kotakota={citiesDummy} />
+          
+          {/* Fitur Pencarian Start */}
+          <div className="row" style={{ marginBottom: 30 }}>
+            <div className="col">
+              <h3>Cari Kota</h3>
+              <div className="card">
+                <div className="card-body">
+                  <div className="form-row">
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="Cari kota"
+                      value={this.state.keyword}
+                      onChange={this.changeKeywordHandler}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Fitur Pencarian End */}
+
         </div>
 
       </div>
