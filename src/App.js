@@ -37,26 +37,28 @@ class App extends Component {
         <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
           <FeaturedCities kotakota={citiesDummy} />
           
-          {/* Fitur Pencarian Start */}
+          {/* Fitur Pencarian Kota Start */}
           <div className="row" style={{ marginBottom: 30 }}>
             <div className="col">
               <h3>Cari Kota</h3>
               <div className="card">
                 <div className="card-body">
                   <div className="form-row">
-                    <input
-                      className="form-control"
-                      type="text"
-                      placeholder="Cari kota"
-                      value={this.state.keyword}
-                      onChange={this.changeKeywordHandler}
-                    />
+                    <div className="col-11">
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder="Cari kota"
+                        value={this.state.keyword}
+                        onChange={this.changeKeywordHandler}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* Fitur Pencarian End */}
+          {/* Fitur Pencarian Kota End */}
 
         </div>
 
