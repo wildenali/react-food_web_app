@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import mainImage from './assets/images/aneka-makanan.jpg'
+import CityCard from './components/CityCard'
 
 class App extends Component {
   render() {
@@ -43,15 +44,7 @@ class App extends Component {
           <div className="row">
 
             {citiesDummy.map(city =>
-              <div className="col-4">
-                <div className="card bg-light mb-3">
-                  <div className="card-body">
-                    <h4 className="card-title">{city.name}</h4>
-                    <p>{city.country_name}</p>
-                    <a href="/#" className="card-text">See restaurant in {city.name}</a>
-                  </div>
-                </div>
-              </div>
+              <CityCard key={city.id} kota={city} />
             )}
 
           </div>
