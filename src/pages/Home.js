@@ -14,7 +14,8 @@ class Home extends Component {
     super()
     this.state = {
       featuredCities: null,
-      citiesResultSearch: null,
+      citiesResultSearch: [],
+      cityKeywordSearch: '',
       keyword: ''
     }
   }
@@ -36,7 +37,11 @@ class Home extends Component {
     })
       .then(({ data }) =>  {
         if (data.status === 'success') {
-          this.setState({ citiesResultSearch: data.location_suggestions })
+          this.setState({
+            citiesResultSearch: data.location_suggestions,
+            keyword: '',
+            cityKeywordSearch: keyword
+          })
         }
       })
       .catch(err => console.log(err))
@@ -83,7 +88,12 @@ class Home extends Component {
           {/* Fitur Pencarian Kota End */}
 
           {/* Search Result */}
-          <CityList title={'Search Result'} kotakota={this.state.citiesResultSearch} /> 
+          <CityList
+            title={'Search Result'}
+            showSubtitle={true}
+            subtitle={this.state.cityKeywordSearch}
+            kotakota={this.state.citiesResultSearch}
+          /> 
         </div>
       </div>
 
