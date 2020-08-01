@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import mainImage from './assets/images/aneka-makanan.jpg'
 import CityCard from './components/CityCard'
+import NavBar from './components/NavBar'
 
 class App extends Component {
   render() {
@@ -14,9 +15,7 @@ class App extends Component {
     
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-          <a className="navbar-brand" href="/">KulinerAn</a>
-        </nav>
+        <NavBar />
         <div className="container-fluid">
           <div className="row" style={{ marginBottom: 30 }}>
             <img src={mainImage} width="100%" alt="aneka-makanan"></img>
