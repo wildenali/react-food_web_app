@@ -88,12 +88,16 @@ class Home extends Component {
           {/* Fitur Pencarian Kota End */}
 
           {/* Search Result */}
-          <CityList
-            title={'Search Result'}
-            showSubtitle={true}
-            subtitle={this.state.cityKeywordSearch}
-            kotakota={this.state.citiesResultSearch}
-          /> 
+          {
+            this.state.cityKeywordSearch !== '' && (
+              <CityList
+                title={'Search Result'}
+                showSubtitle={true}
+                subtitle={this.state.cityKeywordSearch}
+                kotakota={this.state.citiesResultSearch}
+              /> 
+            )
+          }
         </div>
       </div>
 
