@@ -3,16 +3,19 @@ import './App.css';
 import NavBar from './components/NavBar'
 import Home from './pages/Home';
 import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import City from './pages/City';
 
 class App extends Component {
 
   render() {
     return (
-      <div>
+      <Router>
         <NavBar />
-        <Home />
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/city/:city_id" exact component={City}></Route>
         <Footer />
-      </div>
+      </Router>
     );
   }
 }

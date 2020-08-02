@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-    <a className="navbar-brand" href="/">KulinerAn</a>
+    <Link className="navbar-brand" href="/">KulinerAn</Link>
   </nav>
 )
 

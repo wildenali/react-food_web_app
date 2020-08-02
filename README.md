@@ -59,3 +59,5 @@ Untuk memakai file .env pada React, ikuti langkah-langkah berikut:
 `npm i --save dotenv`
 
 # Setting Router
+Install react-router-dom
+`$ npm i -S react-router-dom`
