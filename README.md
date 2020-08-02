@@ -61,3 +61,9 @@ Untuk memakai file .env pada React, ikuti langkah-langkah berikut:
 # Setting Router
 Install react-router-dom
 `$ npm i -S react-router-dom`
+
+## Dummy Data for Categories
+1. Buka dokumentasi Zomato API, klik end point /categories. End point /categories hanya memerlukan user-key pada header dan tidak memerlukan parameter lain.
+2. Masukan API key Zomato Anda pada kolom user-key dan klik try it out.
+3. Copy isi dari response body tersebut, ambil hanya array of object dari categories. Bisa mengambil hanya sebagian atau seluruhnya. Sebagai contoh, saya akan ambil 4 data categories saja. Data tersebut akan kita gunakan sebagai data dummy.
+4. Buka file City.js, buat konstanta categoriesDummy

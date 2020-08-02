@@ -35,6 +35,40 @@ class City extends Component {
   }
 
   render() {
+    // Categiries Dummmy Data
+    const categoriesDummy = [
+      {
+        "categories": {
+          "id": 1,
+          "name": "Delivery"
+        }
+      },
+      {
+        "categories": {
+          "id": 1,
+          "name": "Delivery"
+        }
+      },
+      {
+        "categories": {
+          "id": 2,
+          "name": "Dine-out"
+        }
+      },
+      {
+        "categories": {
+          "id": 3,
+          "name": "Nightlife"
+        }
+      },
+      {
+        "categories": {
+          "id": 4,
+          "name": "Catching-up"
+        }
+      },
+    ]
+
     return (
       <div className="container-fluid" style={{ marginTop: 30, marginBottom: 30 }}>
         { this.state.city && (
