@@ -47,3 +47,13 @@ Untuk mendapatkan data2 seperti kota, gunakan api dari zomato
 Menghubungkan Fungsional di Home page
 1. Install axios
 `$ npm i --save axios`
+
+# Menyimpan Key Pada File Env
+Variabel baseUrl Zomato dan API Key Zomato sudah terpusat pada satu file yaitu api.js. Data-data credentials seperti api key, secret key, password dan data sensitif biasanya disimpan di file terpisah yaitu di file .env. File .env ini tidak ikut di push ke repository, sehingga secret key / api key tidak muncul di repository kita.
+
+Untuk memakai file .env pada React, ikuti langkah-langkah berikut:
+1. Buat sebuah file bernama .env pada folder proyek (root folder)
+2. Tambahkan kode berikut pada file .env
+`REACT_APP_API_KEY_ZOMATO=ISI_API_KEY_ANDA (key api tanpa tanda petik)`
+3. INstall package dotenv
+`npm i --save dotenv`

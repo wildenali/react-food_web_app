@@ -27,10 +27,10 @@ class Home extends Component {
 
   searchHandler = () => {
     let keyword = this.state.keyword
-    var url = `https://developers.zomato.com/api/v2.1/cities`
+    var url = `${API.zomato.baseUrl}/cities`
     axios.get(url, {
       headers: {
-        'user-key' : 'b375f32a923d0972f5a2f886d972e651'
+        'user-key': process.env.REACT_APP_API_KEY_ZOMATO
       },
       params: {
         q: keyword
@@ -52,7 +52,7 @@ class Home extends Component {
     var url = `${API.zomato.baseUrl}/cities`
     axios.get(url, {
         headers: {
-            'user-key': API.zomato.api_key
+            'user-key': process.env.REACT_APP_API_KEY_ZOMATO
         },
         params: {
             city_ids: "74,11052,170"

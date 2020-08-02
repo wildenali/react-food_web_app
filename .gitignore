@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# env tidak di masukan ke repo (aktivkan .env) seharusnya, tpi karena ini latihan, maka d push aja ke repo
+# .env
+
 # testing
 /coverage
 
