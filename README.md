@@ -57,3 +57,5 @@ Untuk memakai file .env pada React, ikuti langkah-langkah berikut:
 `REACT_APP_API_KEY_ZOMATO=ISI_API_KEY_ANDA (key api tanpa tanda petik)`
 3. INstall package dotenv
 `npm i --save dotenv`
+
+# Setting Router
