@@ -38,7 +38,8 @@ class City extends Component {
     this.state = {
       city: null,
       categories: null,
-      categorySelected: null
+      categorySelected: null,
+      keyword: ''
     }
 
   }
@@ -71,6 +72,10 @@ class City extends Component {
     this.setState({ categorySelected: category })
   }
 
+  changeKeywordHandler = (event) => {
+    this.setState({ keyword: event.target.value })
+  }
+
   componentDidMount () {
     // cara mendapatkan parameter city_id dari url / route
     let { city_id } = this.props.match.params
@@ -101,6 +106,32 @@ class City extends Component {
               categorySelected={this.state.categorySelected}
               categoryClickHandler={(category) => this.categoryClickHandler(category)}
             />
+          </div>
+          <div className="col">
+            <h5>Keyword</h5>
+            <div className="card">
+              <div className="card-body">
+                <div className="form-row">
+                  <div className="col-10">
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="Ketik keyword, contoh: nama restorans, lokasi, dll"
+                      value={this.state.keyword}
+                      onChange={this.changeKeywordHandler}
+                    />
+                  </div>
+                  <div className="col">
+                    <button
+                      className="btn btn-primary"
+                      type="button"
+                    >
+                      Add to Criteria
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
