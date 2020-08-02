@@ -3,6 +3,7 @@ import ImageAndWelcome from '../components/ImageAndWelcome'
 import SearchCity from '../components/SearchCity'
 import CityList from '../components/CitiyList'
 import axios from 'axios'
+import { API } from '../config/api'
 
 class Home extends Component {
   
@@ -48,10 +49,10 @@ class Home extends Component {
   }
 
   getFeaturedCities = () => {
-    var url = "https://developers.zomato.com/api/v2.1/cities"
+    var url = `${API.zomato.baseUrl}/cities`
     axios.get(url, {
         headers: {
-            'user-key': 'b375f32a923d0972f5a2f886d972e651'
+            'user-key': API.zomato.api_key
         },
         params: {
             city_ids: "74,11052,170"
