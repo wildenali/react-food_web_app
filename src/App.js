@@ -13,7 +13,7 @@ class App extends Component {
       <Router>
         <NavBar />
         <Route path="/" exact component={Home}></Route>
-        <Route path="/city/:city_id" exact component={City}></Route>
+        <Route path="/city/:city_id" component={City}></Route>
         <Footer />
       </Router>
     );
