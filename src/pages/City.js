@@ -77,7 +77,15 @@ class City extends Component {
   }
 
   categoryClickHandler = (category) => {
-    this.setState({ categorySelected: category })
+    let criteria= [...this.state.criteria]
+    // ambil element array selaint elemen dengan criteriaName 'Category
+    criteria = criteria.filter(cri => cri.criteriaName !== 'Category')
+    let newCriteria = {
+      criteriaName: 'Category',
+      data: category
+    }
+    criteria.push(newCriteria)
+    this.setState({ categorySelected: category, criteria })
   }
 
   changeKeywordHandler = (event) => {
