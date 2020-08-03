@@ -125,7 +125,12 @@ class City extends Component {
                 <p className="card-title">Find Restaurants based on criteria: </p>
                 <table className="table table-hover">
                   <tbody>
-
+                    <i
+                      className="fa fa-times"
+                      aria-hidden="true"
+                      style={{ color: 'red' }}
+                    >
+                    </i>
                   </tbody>
                 </table>
                 <div className="pull-right">
