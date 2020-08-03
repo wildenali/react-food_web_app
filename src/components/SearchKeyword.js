@@ -19,6 +19,7 @@ const SearchKeyword = (props) => (
             <button
               className="btn btn-primary"
               type="button"
+              onClick={props.onClickAddToCriteria}
             >
               Add to Criteria
             </button>

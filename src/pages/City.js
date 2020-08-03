@@ -92,6 +92,19 @@ class City extends Component {
     this.setState({ keyword: event.target.value })
   }
 
+  addToCriteriaHandler = () => {
+    let criteria= [...this.state.criteria]
+    criteria = criteria.filter(cri => cri.criteriaName !== 'Keyword')
+    let newCriteria = {
+      criteriaName: 'Keyword',
+      data        : {
+        name: this.state.keyword
+      }
+    }
+    criteria.push(newCriteria)
+    this.setState({ keyword: '', criteria })
+  }
+
   componentDidMount () {
     // cara mendapatkan parameter city_id dari url / route
     let { city_id } = this.props.match.params
@@ -127,6 +140,7 @@ class City extends Component {
             <SearchKeyword
               keyword={this.state.keyword}
               changeKeywordHandler={this.changeKeywordHandler}
+              onClickAddToCriteria={this.addToCriteriaHandler}
             />
             <div className="card bg-light mb-3" style={{ marginTop: 20 }}>
               <div className="card-body">
