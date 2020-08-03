@@ -40,7 +40,8 @@ class City extends Component {
       city: null,
       categories: null,
       categorySelected: null,
-      keyword: ''
+      keyword: '',
+      criteria: [],
     }
 
   }
@@ -57,7 +58,13 @@ class City extends Component {
     })
       .then(({ data }) => {
         let city = data.location_suggestions[0]
-        this.setState({ city })
+        let newCriteria = {
+          criteriaName: 'City',
+          data: city
+        }
+        let criteria = [...this.state.criteria]
+        criteria.push(newCriteria)
+        this.setState({ city, criteria })
       })
       .catch(err => console.log(err))
   }
