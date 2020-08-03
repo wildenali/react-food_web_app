@@ -67,3 +67,9 @@ Install react-router-dom
 2. Masukan API key Zomato Anda pada kolom user-key dan klik try it out.
 3. Copy isi dari response body tersebut, ambil hanya array of object dari categories. Bisa mengambil hanya sebagian atau seluruhnya. Sebagai contoh, saya akan ambil 4 data categories saja. Data tersebut akan kita gunakan sebagai data dummy.
 4. Buka file City.js, buat konstanta categoriesDummy
+
+# Cara Ambil data Dari API Zomato untuk API Search
+1. Masuk ke https://developers.zomato.com/documentation#!/restaurant/search
+2. Masukan user-key, entity_id (74, adalah entity_id jakarta ), entity_type ubah ke city
+3. Click Try It Out!
+4. Liat file ResponseBodySearch.txt itu adalah hasil response setelah di click tombol Try It Out!
