@@ -125,12 +125,20 @@ class City extends Component {
                 <p className="card-title">Find Restaurants based on criteria: </p>
                 <table className="table table-hover">
                   <tbody>
-                    <i
-                      className="fa fa-times"
-                      aria-hidden="true"
-                      style={{ color: 'red' }}
-                    >
-                    </i>
+                    {this.state.criteria.map((cri, index) => (
+                      <tr key={index} className="table-active">
+                        <td width="40%">{cri.criteriaName}</td>
+                        <td width="50%">{cri.data.name}</td>
+                        <td>
+                          <i
+                            className="fa fa-times"
+                            aria-hidden="true"
+                            style={{ color: 'red' }}
+                          >
+                          </i>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
                 <div className="pull-right">
