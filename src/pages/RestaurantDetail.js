@@ -36,6 +36,69 @@ class RestaurantDetail extends Component {
     return (
       <>
         <p>Halaman Restaurant Detail</p>
+        <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
+          <div className="row">
+            <div className="col-12" style={{ marginBottom: 20 }}>
+              {/* Membuat card */}
+              <div className="card">
+                <div className="card-header">
+                  <div className="row">
+                    <div className="col">
+                      {
+                        this.state.restaurant ? (
+                          <>
+                            <h4 className="text-success" style={{ fontWeight: 800 }}>{this.state.restaurant.name}</h4>
+                            <h6 style={{ fontWeight: 600 }}>{this.state.restaurant.location.locality}</h6>
+                            <h6 className="text-muted">{this.state.restaurant.location.address}</h6>
+                          </>
+                        ) : (
+                          <p>Loadiiiiiiinnnnggg................</p>
+                        )
+                      }
+                    </div>
+                  </div>
+                </div>
+                <div className="card-body">
+                  {
+                    this.state.restaurant ? (
+                      <div className="row">
+                        <div className="col-6">
+                          <img className="img-responsive" src={this.state.restaurant.featured_image} alt="" style={{ borderRadius: 5, width: 500 }}></img>
+                        </div>
+                        <div className="col-6">
+                          <table className="table">
+                            <tbody>
+                              <tr>
+                                <td>Rating</td>
+                                <td>
+                                  <p>{this.state.restaurant.user_rating.aggregate_rating}</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Cuisines</td>
+                                <td>
+                                  {this.state.restaurant.cuisines}
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Cost for Two</td>
+                                <td>
+                                  {this.state.restaurant.currency + ' ' + this.state.restaurant.average_cost_for_two}
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    ) : (
+                      <p>Loadiiiiiiinnnnggg................</p>
+                    )
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </>
     )
   }
