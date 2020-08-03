@@ -113,6 +113,24 @@ class City extends Component {
               keyword={this.state.keyword}
               changeKeywordHandler={this.changeKeywordHandler}
             />
+            <div className="card bg-light mb-3" style={{ marginTop: 20 }}>
+              <div className="card-body">
+                <p className="card-title">Find Restaurants based on criteria: </p>
+                <table className="table table-hover">
+                  <tbody>
+
+                  </tbody>
+                </table>
+                <div className="pull-right">
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
