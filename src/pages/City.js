@@ -7,50 +7,6 @@ import SearchCriteria from '../components/SearchCriteria'
 import RestaurantCard from '../components/RestaurantCard'
 
 
-const restaurant = [
-  {
-    "restaurant": {
-      "id": "18875696",
-      "name": "Kintaro Sushi",
-      "location": {
-        "address": "Jl. Suryo No. 20, Senopati, Jakarta",
-        "locality": "Senopati",
-      },
-      "cuisines": "Sushi, Japanese",
-      "verage_cost_for_two": 200000,
-      "currency": "IDR",
-      "thumb": "https://b.zmtcdn.com/data/pictures/chains/5/18530405/0feeddcbe877a8e27526a8cf5b501edf.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
-      "user_rating": {
-        "aggregate_rating": "4.9",
-        "rating_text": "Excellent",
-        "rating_color": "3F7E00",
-        "votes": "1358"
-      },
-    }
-  },
-
-  {
-    "restaurant": {
-      "id": "18875696",
-      "name": "Kintaro Sushi",
-      "location": {
-        "address": "Jl. Suryo No. 20, Senopati, Jakarta",
-        "locality": "Senopati",
-      },
-      "cuisines": "Sushi, Japanese",
-      "verage_cost_for_two": 200000,
-      "currency": "IDR",
-      "thumb": "https://b.zmtcdn.com/data/pictures/chains/5/18530405/0feeddcbe877a8e27526a8cf5b501edf.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
-      "user_rating": {
-        "aggregate_rating": "4.9",
-        "rating_text": "Excellent",
-        "rating_color": "3F7E00",
-        "votes": "1358"
-      },
-    }
-  },
-]
-
 class City extends Component {
 
   constructor() {
@@ -61,6 +17,7 @@ class City extends Component {
       categorySelected: null,
       keyword: '',
       criteria: [],
+      restaurants: []
     }
 
   }
@@ -145,6 +102,63 @@ class City extends Component {
       .catch(err => console.log(err))
   }
 
+  searchHandler = () => {
+    this.setState({ restaurants: null })
+    let url = `${API.zomato.baseUrl}/search`
+    let params = {}
+
+    for (const cri of this.state.criteria) {
+      switch (cri.criteriaName) {
+        case 'City':
+          params.entity_id    = cri.data.id
+          params.entity_type  = 'city'
+          break;
+        case 'Category':
+          params.category    = cri.data.id
+          break;
+        case 'Keyword':
+          params.q    = cri.data.name
+          break;
+        default:
+          break;
+      }
+    }
+    axios.get(url, {
+      headers: {
+        'user-key': API.zomato.api_key
+      },
+      params
+    })
+      .then(({ data }) => {
+        this.setState({ restaurants: data.restaurants })
+      })
+      .catch(err => console.log(err))
+  }
+
+  renderRestaurantList = () => {
+    if (this.state.restaurants == null) {
+      return (
+        <div className="col">
+          <p>Loading..............</p>
+        </div>
+      )
+    }
+
+    if (this.state.restaurants.length > 0) {
+      return (
+        this.state.restaurants.map(({ restaurant }) => (
+          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+        ))
+      )
+    } else {
+      return (
+        <div className="col">
+          <p>No Data available, Please select criteria and click Search</p>
+        </div>
+      )
+    }
+  }
+
   componentDidMount () {
     // cara mendapatkan parameter city_id dari url / route
     let { city_id } = this.props.match.params
@@ -183,6 +197,7 @@ class City extends Component {
             <SearchCriteria
               criteria={this.state.criteria}
               removeCriteriaHandler={(index) => this.removeCriteriaHandler(index)}
+              onClickSearch={this.searchHandler}
             />
             <div className="row">
               <div className="col" style={{ marginBottom: 10 }}>
@@ -191,9 +206,7 @@ class City extends Component {
             </div>
             <div className="row">
               {
-                restaurant.map(({ restaurant }) => (
-                  <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-                ))
+                this.renderRestaurantList()
               }
             </div>
           </div>
