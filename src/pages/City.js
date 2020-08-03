@@ -105,6 +105,12 @@ class City extends Component {
     this.setState({ keyword: '', criteria })
   }
 
+  removeCriteriaHandler = (index) => {
+    let criteria = [...this.state.criteria]
+    criteria.splice(index, 1)
+    this.setState({ criteria })
+  }
+
   componentDidMount () {
     // cara mendapatkan parameter city_id dari url / route
     let { city_id } = this.props.match.params
@@ -152,12 +158,15 @@ class City extends Component {
                         <td width="40%">{cri.criteriaName}</td>
                         <td width="50%">{cri.data.name}</td>
                         <td>
-                          <i
-                            className="fa fa-times"
-                            aria-hidden="true"
-                            style={{ color: 'red' }}
-                          >
-                          </i>
+                          {cri.criteriaName !== 'City' && (
+                            <i
+                              className="fa fa-times"
+                              aria-hidden="true"
+                              style={{ color: 'red' }}
+                              onClick={() => this.removeCriteriaHandler(index)}
+                            >
+                            </i>
+                          )}
                         </td>
                       </tr>
                     ))}
