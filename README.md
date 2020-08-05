@@ -75,18 +75,21 @@ Install react-router-dom
 4. Liat file ResponseBodySearch.txt itu adalah hasil response setelah di click tombol Try It Out!
 
 # Deploy to Firebase
-1. Install firebase-tools
-`$ npm i -g firebase-tools`
-2. Login to girebase
+1. Build project
+`$ npm run build`
+2. Install firebase-tools
+`$ npm install -g firebase-tools`
+3. Login to girebase
 `$ firebase login`
-3. Masuk ke page console.firebase.google.com
-4. Buat project app disitu
-5. Masukan root directory ke project react di terminal
+4. Masuk ke page console.firebase.google.com
+5. Buat project app disitu
+6. Masukan root directory ke project react di terminal
 `$ firebase init`
 - Are you ready to proceed? (Y/n) , jawab Y aja
 - Pilih Hosting: Configure and deploy Firebase Hosting sites (cara pilih dengan arah panah, dan klik space untuk memilihnya)
 - Pilih Use existing project
 - Pilih nama project yang telah di buat di Firebase pada langkah 4 diatas
 - What do you want to use as your public directory? (awalnya public ganti jadi build)
-- Configure as a single-page app (rewrite all urls to /index.html)? (y/N) , jawab Y aja
-6. Setup package.json untuk misalnya supaya tidak mengetikan dua kali  perintah saat akan deploy lagi
+- Configure as a single-page app (rewrite all urls to /index.html)? (y/N) , jawab YES aja
+- Overwrite index.html? jawab No, karena mau pake index.html yg di build
+7. Setup package.json untuk misalnya supaya tidak mengetikan dua kali  perintah saat akan deploy lagi
