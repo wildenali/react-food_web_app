@@ -92,4 +92,6 @@ Install react-router-dom
 - What do you want to use as your public directory? (awalnya public ganti jadi build)
 - Configure as a single-page app (rewrite all urls to /index.html)? (y/N) , jawab YES aja
 - Overwrite index.html? jawab No, karena mau pake index.html yg di build
-7. Setup package.json untuk misalnya supaya tidak mengetikan dua kali  perintah saat akan deploy lagi
+7. Deploy ke firebase
+`$ firebase deploy`
+NB: Setup package.json untuk misalnya supaya tidak mengetikan dua kali  perintah saat akan deploy lagi
