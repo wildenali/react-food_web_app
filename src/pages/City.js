@@ -130,6 +130,7 @@ class City extends Component {
       params
     })
       .then(({ data }) => {
+        console.log(data)
         this.setState({ restaurants: data.restaurants })
       })
       .catch(err => console.log(err))
